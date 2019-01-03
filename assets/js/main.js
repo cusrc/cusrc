@@ -1,12 +1,14 @@
 "use strict";
 jQuery( document ).ready( function ( $ ) {
 
+    $( ".loaderbox" ).fadeOut();
+     $( ".preloader" ).delay( 1 ).fadeOut( "slow" );
 //for Preloader
 
-    $( window ).load( function () {
-        $( ".loaderbox" ).fadeOut();
-        $( ".preloader" ).delay( 1000 ).fadeOut( "slow" );
-    } );
+    // $( window ).load( function () {
+    //     $( ".loaderbox" ).fadeOut();
+    //     $( ".preloader" ).delay( 1 ).fadeOut( "slow" );
+    // } );
 
 
     /*---------------------------------------------*
