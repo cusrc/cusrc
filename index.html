@@ -36,13 +36,13 @@
     <body data-spy="scroll" data-target=".navbar-collapse">
 
         <!-- Preloader -->
-        <div class="preloader loaderbox">
-            <div id="cupcake" class="loaderbox">
+        <!--<div class="preloader loaderbox">-->
+            <!--<div id="cupcake" class="loaderbox">-->
 
 
 
-            </div>
-        </div>
+            <!--</div>-->
+        <!--</div>-->
         <!--End off Preloader -->
 
 
@@ -1383,7 +1383,10 @@
 
         <script src="assets/js/plugins.js"></script>
         <script src="assets/js/main.js"></script>
-
+<script>
+    $( ".loaderbox" ).fadeOut();
+    $( ".preloader" ).delay( 1 ).fadeOut( "slow" );
+</script>
     </body>
 </html>
 
