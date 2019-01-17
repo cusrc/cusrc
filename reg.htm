@@ -12,37 +12,25 @@
     <link href="statics/templates/yungou/css/mobile/comm.css" rel="stylesheet" type="text/css" />
     <link href="statics/templates/yungou/css/mobile/login.css" rel="stylesheet" type="text/css" />
     <script src="statics/templates/yungou/js/mobile/jquery190.js" language="javascript" type="text/javascript"></script>
-    <!--<script id="pageJS" data="statics/templates/yungou/js/mobile/Register.js" language="javascript" type="text/javascript"></script>-->
-    <!--<script id="pageJS2" data="statics/templates/yungou/js/mobile/MobileCheck.js" language="javascript" type="text/javascript"></script>-->
+ 
     <script src="statics/templates/yungou/js/layer/layer.js"></script>
     <script src="statics/templates/yungou/js/content/exloper.js"></script>
-    <script src="http://45.32.61.113:8996/statics/templates/yungou/js/baseurl.js"></script>
+      
 </head>
 <script>
-    var baseUrlServer = baseurl.replace("__","bzsj");
-    baseUrlServer =baseurl.replace("www","t");
-    // baseUrlServer = "http://127.0.0.1:8081/";
-    localStorage.setItem('baseUrlServer', baseUrlServer );
-    //localStorage.getItem('baseUrlServer')
+    localStorage.setItem('baseUrlServer', "http://www.bz001.top/" );
 </script>
 <body style="background: #f4f4f4;">
 <div class="h5-1yyg-v1" id="content">
-
-
     <header class="header" style="position: fixed;width: 100%;z-index: 99999999;">
         <h1 style="width: 100%;text-align: center;float: none;top: 0px;left: 0px;font-size: 25px;" class="fl">
     <span style="display: block;height: 49px;line-height: 49px;">
       <a style="font-size: 20px;line-height: 49px;" >
-       宝藏世界 - 邀请注册
+       宝藏世界 - 邀请
       </a>
     </span>
-
         </h1>
-        <!--<a id="fanhui" class="cefenlei" onclick="history.go(-1)" href="javascript:;">-->
-            <!--<img width="30" height="30" src="statics/templates/yungou/images/mobile/fanhui.png"></a>-->
         <div class="fr head-r" style="position: absolute;right: 6px;top: 10px;">
-
-            <!--<a  class="z-shop" style="background-position: 2px -73px;"></a>-->
         </div>
     </header>
     <section>
@@ -87,7 +75,7 @@
                     <a id="btnNext" class="nextBtn  orgBtn" style="width: 36%;margin-left: 64%"  > 发送验证码</a>
                     <a id="btnGetCode" class="resendBtn grayBtn" style="width: 36%;margin-left: 64%;display: none">重新发送</a>
                 </li>
-                <!--<li><a id="btnNext" class="nextBtn  orgBtn">发送手机验证码</a></li>-->
+              
                 <input type="hidden" id="inpMobile" value="" />
                 <li>
                     <input type="text" id="mobileCode" placeholder="请输入手机验证码" class="rText" />
@@ -95,8 +83,7 @@
                 </li>
                 <li><a href="javascript:void(0);" id="btnPostCode" class="nextBtn  orgBtn">确认，下一步</a></li>
                 <li style="font-size:12px;">如未收到验证短信，请在120秒后点击重新发送。</li>
-                <!--<li><a id="btnGetCode" class="resendBtn grayBtn">重新发送</a></li>-->
-                <!--<li><a style="text-align: right;line-height: 32px;" href="Login.htm">已有帐号，点击登陆</a></li>-->
+            
                 <li><span id="isCheck"><em></em>我已阅读并同意</span><a href="terms.html">用户协议</a></li>
             </ul>
 
@@ -188,13 +175,10 @@
         return D.getFullYear().toString().substring(2, 4) + '.' + (D.getMonth() + 1) + '.' + D.getDate() + '.' + D.getHours() + '.' + (D.getMinutes() < 10 ? '0' : D.getMinutes().toString().substring(0, 1))
     }
     Base.getScript('statics/templates/yungou/js/mobile/Bottom.js');
-    // $(function () {
-    //     Base.getScript('statics/templates/yungou/js/mobile/MobileCheck.js');
-    // });
+   
     function   GetSRC(){
         var bsaeurl = localStorage.getItem('baseUrlServer');
         if(bsaeurl){
-            //$("erwmtp").html('<img style="border-radius: 5px; margin-left: 5px;margin-top: 10px;" id="checkcode" src="'+"/>')
             $("#checkcode").attr("src",bsaeurl  +'/index.php/api/checkcode/image/80_27/');
         }
         var checkcode = document.getElementById('checkcode');
@@ -230,12 +214,6 @@
                 </p>
             </li>
         </ul><button class="download" onclick=" window.location.href=codeurl;" style="    background-color: #2f5199; min-width: 90px; height: 50px; border-radius: 5px; font-size: 28px; color: rgb(255, 255, 255);">下载</button>
-
-        <!--<script>-->
-          <!--function  gorourl(){-->
-              <!--window.location.href=codeurl ;-->
-            <!--}-->
-        <!--</script>-->
     </aside>
 </div>
 
@@ -325,7 +303,7 @@
     }
     var times1 = 110 ;
     function  ReSendYZM() {
-        //console.log("已进入循环",times1);
+       
         if(times1<=0){
             times1=110;
             $("#btnGetCode").hide();$("#btnNext").show();
@@ -356,17 +334,12 @@
                     if(data.info.indexOf(""))
                     layer.msg(data.info);
                     layer.msg("注册成功!请下载APP尽情体验吧!");
-
-                    // setTimeout(function () {
-                    //
-                    //     window.location.href = "Login.htm";
-                    // },1500);
+ 
                 }else if(data.status==0){
                       layer.msg(data.info);
                 }
             },error:function (data) {
-               // console.log(data);
-                //layer.msg("用戶太火爆啦，請稍後再試！");
+             
 
                 CheckShiZuce() ;
             }
@@ -374,7 +347,7 @@
     });
 
     function CheckShiZuce() {
-        console.log("----ppp----");
+       
         $.ajax({
             type: "POST",
             url: localStorage.getItem('baseUrlServer') + "/index.php/register2" ,
