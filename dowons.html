@@ -1,51 +1,33 @@
 <!DOCTYPE html>
-<!-- saved from url=(0041)http://300times.com/300shengshi/down.html -->
 <html>
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CheckInfo</title>
     <link href="./dowons_files/app.css" rel="stylesheet" type="text/css">
 </head>
-
 <body style="background: #ffffff">
     <div id=""></div>
     <div class="container-fluid">
         <div class="row-fluid">
             <div class="col-sm-12">
                 <div class="text-center" style="padding: 40px 0 0 0">
-
                     <h1>正在检测.....</h1>
-                    <h8>
-
-                    </h8>
+                    <h8></h8>
                 </div>
-
                 <div class="text-center" style="padding-top: 40px">
-                    <a onclick="GoToUrl()"
-                    
-                    class="btn btn-success btn-lg"
-                        style="width: 210px">单击此处立即跳转</a>
-                    
+                    <a onclick="GoToUrl()"   class="btn btn-success btn-lg" style="width: 210px">单击此处立即跳转</a>    
                 </div>
-
-             
-
-           
-
             </div>
         </div>
     </div>
     <script type="text/javascript">
         function GoToUrl(){
-            var yqm =  GetQueryString("yqm");
+            var yqm =  GetQueryString("y");
             var gourl0 = "http://139.180.207.139:8082/pages/Public/regs.html?yqr="+yqm ; 
             window.location.href = gourl0 ;
         }
-
         function GetQueryString(name)
         {
             var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
@@ -60,17 +42,14 @@
                 return false;
             }
         }
-
         var isWeixin = is_weixin();
         var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
-
         function loadHtml() {
             var div = document.createElement('div');
             div.id = 'weixin-tip';
             div.innerHTML = '<p><img style="max-width: 100%; height: auto;" src="https://cusrc.github.io/cusrc/dowons_files/live_weixin.png" alt="微信打开"/></p>';
             document.body.appendChild(div);
         }
-
         function loadStyleText(cssText) {
             var style = document.createElement('style');
             style.rel = 'stylesheet';
@@ -83,7 +62,6 @@
             var head = document.getElementsByTagName("head")[0]; //head标签之间加上style样式
             head.appendChild(style);
         }
-
         var cssText = "#weixin-tip{position: fixed; left:0; top:0; background: rgba(0,0,0,0.8); filter:alpha(opacity=80); width: 100%; height:100%; z-index: 100;} #weixin-tip p{text-align: center; margin-top: 10%; padding:0 5%;}";
         if (isWeixin) {
             loadHtml();
@@ -92,7 +70,5 @@
             GoToUrl();
         }
     </script>
-
 </body>
-
 </html>
